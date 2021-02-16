@@ -1,5 +1,8 @@
 // HTML要素の取得
 const BTN = document.getElementById(`btn`);
+const PREFECTURE = document.getElementById(`prefecture`);
+const CITY = document.getElementById(`city`);
+const ADDRESS = document.getElementById(`address`);
 const DIV_JS = document.getElementById(`js`);
 
 // ボタンが押された時の処理
@@ -30,5 +33,15 @@ const urijoin = (strings, ...values) => {
 
 // 住所検索APIのコールバック関数
 const cb_address = data => {
-    console.log(data);
+    if (data.results) {
+        // 取得したデータを各HTML要素に代入
+        const tmp = data.results[0];
+        PREFECTURE.value = tmp.address1; // 都道府県を代入
+        CITY.value = tmp.address2;       // 市区町村を代入
+        ADDRESS.value = tmp.address3;    // 住所を代入
+    } else {
+        // データが取得できなかった時の処理
+        console.log(data);
+        alert(`該当するデータが見つかりませんでした`);
+    }
 }
