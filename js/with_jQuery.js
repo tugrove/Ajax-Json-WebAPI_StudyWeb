@@ -1,4 +1,4 @@
-// HTMLを読み込んでから処理
+/* HTMLを読み込んでからの処理 ------------------ */
 $(
     // 検索ボタンをクリックした時の処理
     $(`#btn`).on(`click`, () => {
@@ -11,10 +11,10 @@ $(
             // 通信に成功した時の処理
             if (data.results) {
                 // 取得したデータを各HTML要素に代入
-                const ADDRESS = data.results[0];
-                $(`#prefecture`).val(ADDRESS.address1); // 都道府県を代入
-                $(`#city`).val(ADDRESS.address2);       // 市区町村を代入
-                $(`#address`).val(ADDRESS.address3);    // 住所を代入
+                const tmp = data.results[0];
+                $(`#prefecture`).val(tmp.address1); // 都道府県を代入
+                $(`#city`).val(tmp.address2);       // 市区町村を代入
+                $(`#address`).val(tmp.address3);    // 住所を代入
             } else {
                 // データが取得できなかった時の処理
                 console.log(data);
@@ -26,6 +26,7 @@ $(
         });
     })
 );
+
 
 /* 関数定義 ---------------------------------- */
 // URIを結合するための関数
