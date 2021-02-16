@@ -1,0 +1,47 @@
+/* stylesheet for Ajax-Json-WebAPI_StudyWeb */
+
+
+/* global settings */
+/* ============================================ */
+
+/* charset */
+@charset "UTF-8";
+
+/* basic settings */
+body {
+    font-size: inherit;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: inherit;
+}
+
+*:focus-visible {
+    outline: auto rgba(100, 100, 255, .4);
+}
+
+.sidePadding {
+    padding: 0 1em;
+}
+
+h1 {
+    margin: .5em 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+p {
+    margin: 1em 0;
+}
+
+input {
+    width: 8em;
+    height: 1.5em;
+    border: solid 1px rgba(200, 200, 200, .5);
+    background: rgba(255, 255, 255, .5);
+}
+
+button {
+    padding: 0 .4em;
+    border: solid 1px rgb(100, 100, 100);
+    background: rgb(230, 230, 230);
+}
